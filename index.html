@@ -394,8 +394,10 @@ function initMap() {
     ],
     mapTypeControl: true,
     streetViewControl: true,
+          streetViewControlOptions: { position: google.maps.ControlPosition.RIGHT_BOTTOM },
     fullscreenControl: true,
     zoomControl: true,
+          zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_BOTTOM },
   });
 
   // Create all markers
@@ -459,7 +461,7 @@ function buildFilterPanel() {
   const body = document.getElementById('filter-body');
   CATEGORY_GROUPS.forEach((group, gi) => {
     const groupEl = document.createElement('div');
-    groupEl.className = 'filter-group';
+    groupEl.className = 'filter-group collapsed';
     groupEl.dataset.groupId = group.id;
 
     const header = document.createElement('div');
